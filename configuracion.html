@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuración de Tipos de Tickets</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="/js/tipos_tickets.js" defer></script>
+</head>
+<body>
+  <div class="wizard">
+    <section class="step active">
+      <h2>🎟️ Configurar Tipos de Tickets</h2>
+      <form id="formTipoTicket">
+        <div class="input-group">
+          <label for="codigoTipo">Código:</label>
+          <input type="text" id="codigoTipo" required />
+        </div>
+        <div class="input-group">
+          <label for="descripcionTipo">Descripción:</label>
+          <input type="text" id="descripcionTipo" required />
+        </div>
+        <div class="input-group">
+          <label for="valorTipo">Valor:</label>
+          <input type="number" id="valorTipo" required />
+        </div>
+        <button type="submit">Agregar Tipo</button>
+      </form>
+      <div class="ticket-list">
+        <h3>Tipos Registrados</h3>
+        <ul id="listaTipos"></ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

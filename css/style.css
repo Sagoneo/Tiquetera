@@ -1,0 +1,116 @@
+/* css/style.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+.wizard {
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  padding: 30px 40px;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  margin: 0 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.progress-step.active {
+  background: #00d4ff;
+  color: #000;
+}
+
+.step {
+  display: none;
+  animation: fade 0.3s ease-in-out;
+}
+
+.step.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+button {
+  padding: 10px 20px;
+  background: #00d4ff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #00f0ff;
+}
+
+.ticket-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket-list li {
+  background: rgba(255,255,255,0.1);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}

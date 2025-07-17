@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiquetera Digital - Wizard Pro</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <script src="/js/wizard.js" defer></script>
+</head>
+<body>
+  <div class="wizard">
+    <div class="progress">
+      <div class="progress-step active">1. Tiquetera</div>
+      <div class="progress-step">2. Tipos</div>
+      <div class="progress-step">3. Empleados</div>
+      <div class="progress-step">4. Detalle</div>
+      <div class="progress-step">5. Confirmar</div>
+    </div>
+
+    <form id="wizardForm">
+      <!-- Paso 1: Crear Tiquetera -->
+      <section class="step active">
+        <h2><i class="fas fa-cube"></i> Crear Tiquetera</h2>
+        <div class="input-group">
+          <label>Nombre:</label>
+          <input type="text" name="nombre" required />
+        </div>
+        <div class="input-group">
+          <label>Fecha Inicio:</label>
+          <input type="date" name="fechaInicio" required />
+        </div>
+        <div class="input-group">
+          <label>Fecha Final:</label>
+          <input type="date" name="fechaFinal" required />
+        </div>
+        <div class="input-group">
+          <label>Descripción:</label>
+          <textarea name="descripcion"></textarea>
+        </div>
+        <div class="actions">
+          <span></span>
+          <button type="button" onclick="nextStep()">Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Paso 2: Asignar Tipos a Tiquetera -->
+      <section class="step">
+        <h2><i class="fas fa-ticket-alt"></i> Tipos para la Tiquetera</h2>
+        <div class="input-group">
+          <label>Selecciona Tipo:</label>
+          <select id="comboTipos"></select>
+        </div>
+        <button type="button" onclick="asignarTipoATiquetera()">Asignar Tipo</button>
+        <div class="ticket-list">
+          <h3>Tipos Asignados:</h3>
+          <ul id="listaAsignaciones"></ul>
+        </div>
+        <div class="actions">
+          <button type="button" onclick="prevStep()">Anterior</button>
+          <button type="button" onclick="nextStep()">Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Paso 3: Empleados -->
+      <section class="step">
+        <h2><i class="fas fa-users"></i> Asignar a Empleados</h2>
+        <button type="button" onclick="simularEmpleados()">Generar Tickets por Empleados</button>
+        <div id="empleadosGenerados" style="margin-top: 15px;"></div>
+        <div class="actions">
+          <button type="button" onclick="prevStep()">Anterior</button>
+          <button type="button" onclick="nextStep()">Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Paso 4: Detalle por Empleado -->
+      <section class="step">
+        <h2><i class="fas fa-layer-group"></i> Generar Detalle por Empleado</h2>
+        <button type="button" onclick="simularDetalleTickets()">Generar Detalle</button>
+        <div id="detalleGenerado" style="margin-top: 15px;"></div>
+        <div class="actions">
+          <button type="button" onclick="prevStep()">Anterior</button>
+          <button type="button" onclick="nextStep()">Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Paso 5: Confirmación -->
+      <section class="step">
+        <h2><i class="fas fa-check-circle"></i> Confirmación</h2>
+        <p>Si no hubo novedades, presiona finalizar.</p>
+        <div class="actions">
+          <button type="button" onclick="prevStep()">Anterior</button>
+          <button type="button" onclick="finalizarProceso()">Finalizar</button>
+        </div>
+      </section>
+    </form>
+  </div>
+</body>
+</html>
