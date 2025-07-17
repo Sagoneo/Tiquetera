@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to right, #3e86a5, #207f9e, #27586d);
   color: #fff;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .progress-step.active {
-  background: #00d4ff;
+  background: #48d1ec;
   color: #000;
 }
 
